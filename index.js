@@ -3,7 +3,6 @@ const app = express()
 const mysql = require('mysql2')
 const fs = require('fs')
 require('dotenv').config()
-const expressoesModels = require('../models/expressoesModels');
 
 const port = process.env.PORT || 3000
 const connection = mysql.createConnection(process.env.JAWSDB_URL)
