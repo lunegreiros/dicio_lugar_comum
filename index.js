@@ -5,14 +5,7 @@ const fs = require('fs')
 require('dotenv').config()
 
 const port = process.env.PORT || 3000
-// const connection = mysql.createConnection({
-//   host: process.env.DB_HOST,
-//   user: process.env.DB_USER,
-//   database: process.env.DB_DATABASE,
-//   password: process.env.DB_PASS
-// })
-//const connection = mysql.createConnection(process.env.DB_STRING_CONNECTION)
-const connection = mysql.createConnection()
+const connection = mysql.createConnection(process.env.JAWSDB_URL)
 
 
 connection.connect(err => {
