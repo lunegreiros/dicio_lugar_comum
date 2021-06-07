@@ -56,7 +56,7 @@ app.get('/api/:palavra', (req, res) => {
     });
 })
 
-app.get('/api/todas_palavras', (req, res) => {
+app.get('/api', (req, res) => {
   connection.query('select * from palavras', (err, rows) => {
     if (err) {
       res.send({
