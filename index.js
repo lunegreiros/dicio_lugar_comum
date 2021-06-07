@@ -25,7 +25,11 @@ connection.connect(err => {
 })
 
 app.get('/', (req, res) => {
-  res.send('Dicionário de Lugar Comum - /api/:<_palavra_> ou /api/todas_palavras')
+  res.json({
+    "Como usar a api?":"digite a URL completa e o retorno será um JSON",
+    "Lista de todas as palavras":"https://dicio-lugar-comum.herokuapp.com/api/",
+    "Lista de expressões para determinada palavra":"https://dicio-lugar-comum.herokuapp.com/api/<_palavra_>"
+  })
 })
 
 app.get('/api/:palavra', (req, res) => {
@@ -67,6 +71,7 @@ app.get('/api', (req, res) => {
     }
   })
 })
+
 app.listen(port, err => {
   if (!err) {
     console.log('server listening on port', port)
