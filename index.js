@@ -3,6 +3,7 @@ const app = express()
 const mysql = require('mysql2')
 const fs = require('fs')
 require('dotenv').config()
+const cors = require('cors')
 
 const port = process.env.PORT || 3000
 const connection = mysql.createConnection(process.env.JAWSDB_URL)
@@ -23,6 +24,10 @@ connection.connect(err => {
     }
   })
 })
+
+app.use(cors({
+  origin: ['http://localhost:3000/', 'https://app-scriba-pro.herokuapp.com/']
+}));
 
 app.get('/', (req, res) => {
   res.json({
