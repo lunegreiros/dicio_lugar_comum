@@ -26,7 +26,7 @@ connection.connect(err => {
 })
 
 app.use(cors({
-  origin: ['http://localhost:3000/', 'https://app-scriba-pro.herokuapp.com/']
+  origin: '*'
 }));
 
 app.get('/', (req, res) => {
